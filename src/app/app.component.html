@@ -1,0 +1,103 @@
+<section style="height: 100%; width: 100%; position: absolute;">
+  <md-sidenav-container fxFlex fxLayout="row">
+    <md-sidenav #sidenav mode="side" opened="true" class="mat-elevation-z4" fxLayout="column" style="z-index: 1">
+      <md-toolbar>
+        <img src="/assets/img/Jyske_Bank.svg" alt="Jyske Bank" height="20px">
+      </md-toolbar>
+      <md-divider></md-divider>
+      <section fxFlex style="overflow: auto;">
+        <md-nav-list>
+          <h3 md-subheader>General</h3>
+          <md-list-item *ngFor="let link of links">
+            <md-icon md-list-icon>{{link.icon}}</md-icon>
+              <a md-line href="#/{{link.url}}">{{ link.label }}</a>
+            </md-list-item>
+            <md-divider></md-divider>
+            <h3 md-subheader>Settings</h3>
+          <md-list-item *ngFor="let link of settings">
+            <md-icon md-list-icon>{{link.icon}}</md-icon>
+              <a md-line href="#/{{link.url}}">{{ link.label }}</a>
+            </md-list-item>
+            <md-divider></md-divider>
+        </md-nav-list>  
+      </section>
+    </md-sidenav>
+    <section fxFlex fxLayout="column">
+      <md-toolbar  style="z-index: 1" color="primary" class="mat-elevation-z4">
+<!--         <button md-icon-button>
+          <md-icon>menu</md-icon>
+        </button> -->
+        <span fxFlex></span>
+        <button md-icon-button> 
+          <md-icon>more_vert</md-icon>
+        </button>
+      </md-toolbar>
+      <section fxFlex style="overflow: auto;">
+        <bd-container>
+          <md-accordion class="example-headers-align">
+  <md-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+    <md-expansion-panel-header>
+      <md-panel-title>
+        Personal data
+      </md-panel-title>
+      <md-panel-description>
+        Type your name and age
+        <md-icon>account_circle</md-icon>
+      </md-panel-description>
+    </md-expansion-panel-header>
+
+    <md-form-field>
+      <input mdInput placeholder="First name">
+    </md-form-field>
+
+    <md-form-field>
+      <input mdInput type="number" min="1" placeholder="Age">
+    </md-form-field>
+
+    <md-action-row>
+      <button md-button color="primary" (click)="nextStep()">Next</button>
+    </md-action-row>
+  </md-expansion-panel>
+
+  <md-expansion-panel hideToggle="true">
+    <md-expansion-panel-header>
+      <md-panel-title>
+        Destination
+      </md-panel-title>
+      <md-panel-description>
+        Type the country name
+        <md-icon>map</md-icon>
+      </md-panel-description>
+    </md-expansion-panel-header>
+ddd
+
+    <md-action-row>
+      <button md-button color="warn">Previous</button>
+      <button md-button color="primary" >Next</button>
+    </md-action-row>
+  </md-expansion-panel>
+
+  <md-expansion-panel hideToggle="true">
+    <md-expansion-panel-header>
+      <md-panel-title>
+        Day of the trip
+      </md-panel-title>
+      <md-panel-description>
+        Inform the date you wish to travel
+        <md-icon>date_range</md-icon>
+      </md-panel-description>
+    </md-expansion-panel-header>
+
+    <md-action-row>
+      <button md-button color="warn">Previous</button>
+      <button md-button color="primary">End</button>
+    </md-action-row>
+  </md-expansion-panel>
+
+</md-accordion>
+
+        </bd-container>
+      </section>
+    </section>
+  </md-sidenav-container>
+</section>
