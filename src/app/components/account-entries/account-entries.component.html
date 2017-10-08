@@ -1,0 +1,51 @@
+<bd-notification *ngIf="user.isEligibleToSeeNotification()"></bd-notification>
+<bd-container>
+	<section fxLayout="row" fxLayoutAlign="space-between center" style="padding: 0 1.4rem;">
+		<h4 class="no-margin mat-caption">Today</h4>
+		<button md-icon-button>
+			<md-icon>filter_list</md-icon>
+		</button>
+	</section>
+	<md-accordion class="example-headers-align">
+	  <md-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true" *ngFor="let i of [1,2,3,4,5]">
+	    <md-expansion-panel-header>
+	      <md-panel-title>
+	        H&M, Aarhus
+	      </md-panel-title>
+	      <md-panel-description>
+	        Shopping
+	        <md-icon>redeem</md-icon>
+	      </md-panel-description>
+	    </md-expansion-panel-header>
+		
+		<section fxLayout="column" fxLayoutGap="20px">
+			<section>			
+			    Posting details here
+			</section>
+
+			<bd-graph fxFlex type="google.charts.Bar" [data]="line_ChartData" [options]="line_ChartOptions"></bd-graph>
+				
+		</section>
+
+	    <md-action-row>
+			<button md-button color="primary">ACTION 1</button>
+	    	<button md-button color="primary">ACTION 2</button>
+	    </md-action-row>
+	  </md-expansion-panel>
+
+	</md-accordion>
+</bd-container>
+<style type="text/css" media="screen">
+	.example-headers-align .mat-expansion-panel-header-title, 
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+.mat-expansion-panel-header-description{
+	margin-right: .3rem; 
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+</style>

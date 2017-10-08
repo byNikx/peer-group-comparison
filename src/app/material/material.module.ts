@@ -5,7 +5,8 @@ import {
 	MdListModule, MdCardModule, MdProgressSpinnerModule,
 	MdDialogModule, MdCheckboxModule, MdRadioModule,
 	MdTabsModule, MdSelectModule, MdSliderModule,
-	MdTableModule, MatExpansionModule
+	MdTableModule, MatExpansionModule, MatSidenavModule,
+	MatGridListModule
 } from '@angular/material';
 
 const MD_MODULES = [
@@ -13,7 +14,8 @@ const MD_MODULES = [
 	MdListModule, MdCardModule, MdProgressSpinnerModule,
 	MdDialogModule, MdCheckboxModule, MdRadioModule,
 	MdTabsModule, MdSelectModule, MdSliderModule,
-	MdTableModule, MatTableModule, MatExpansionModule
+	MdTableModule, MatTableModule, MatExpansionModule,
+	MatSidenavModule, MatGridListModule
 ]
 
 @NgModule({

@@ -1,0 +1,53 @@
+<bd-container>
+	<md-card>
+		<section fxLayout="row" fxLayoutAlign="space-between start">
+			<section>
+				<md-card-title>{{!!selectedUserType?selectedUserType.getType():'Select User Type'}}</md-card-title>
+				<md-card-subtitle>System detected user type</md-card-subtitle>							
+			</section>
+			<section fxLayout="column" fxLayoutAlign="center center">
+				<section style="width: 2rem; height: 2rem; border-radius: 1rem; background-color: #e8e8e8;" fxLayout="row" fxLayoutAlign="center center">
+					<h3 class="no-margin">87</h3>					
+				</section>
+				<span class="mat-caption">match index</span>
+			</section>
+		</section>
+		<md-card-content>
+			<section fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="30px">
+				<section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+					<section>
+						<img src="./assets/img/user-type/{{!!selectedUserType?selectedUserType.getIcon():'empty.png'}}" width="150px" alt="User Type" />	
+					</section>
+					<!-- <button (click)="showNewUserTypes()" md-button>CHANGE</button> -->
+				</section>
+				<section fxFlex>
+				<md-grid-list [cols]="layout.media.isActive('gt-sm')?3:2" rowHeight="60px">
+					<md-grid-tile *ngFor="let i of [1,2,3,4,5,6,7]">
+						<section fxLayout="column">							
+							<span class="no-margin mat-caption">Label:</span>
+							<span class="mat-body-1">287,002 DKK</span>
+						</section>
+					</md-grid-tile>
+				</md-grid-list>
+					<!-- <section style="background-color: #e8e8e8" [fxFlex]="layout.media.isActive('gt-sm')?33:50" *ngFor="let i of [1,3,4,5,6]">
+						<h4 class="no-margin mat-subheading-1">Label:</h4>
+						<h3 class="no-margin">287,002 DKK</h3>
+					</section> -->
+				</section>
+			</section>
+		</md-card-content>
+		<md-card-content *ngIf="showNewTypes">
+			<md-grid-list [cols]="layout.media.isActive('gt-sm')?4:2" rowHeight="1:1">
+				<md-grid-tile style="background-color: #e8e8e8; cursor: pointer;" *ngFor="let type of userTypes" (click)="user.setUserType(type)">
+					<img src="./assets/img/user-type/{{type.getIcon()}}" alt="{{type.getType()}}" style="width:60%">
+					<md-grid-tile-footer fxLayoutAlign="center center">{{type.getType()}}</md-grid-tile-footer>
+				</md-grid-tile>
+			</md-grid-list>
+
+		</md-card-content>
+		<md-card-actions>
+		    <button md-button (click)="toggleNewUserTypes()">{{showNewTypes?'CANCEL':!!selectedUserType?'CHANGE':'SELECT'}}</button>
+		    <a routerLink="/show-comparison" md-button color="primary">CONTINUE</a>
+		</md-card-actions>
+	</md-card>
+</bd-container>

@@ -17,9 +17,9 @@ export class AppComponent {
   		icon: 'home',
   		url: 'home'
   	},{
-  		label: 'Transactions',
+  		label: 'Account Entries',
   		icon: 'list',
-  		url: 'transactions'
+  		url: 'account-entries'
   	},{
   		label: 'Budget',
   		icon: 'monetization_on',

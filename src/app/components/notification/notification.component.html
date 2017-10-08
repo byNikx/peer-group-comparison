@@ -1,0 +1,19 @@
+<section class="bd-notification mat-elevation-z4" fxLayout="column" *ngIf="visible">
+	<section style="padding: 10px 20px;" fxLayout="column" fxLayoutGap="2px">
+		<section fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+			<md-icon color="accent">stars</md-icon>
+			<span class="app-title mat-caption">Peer Group Comparison</span>			
+		</section>
+		<h4 class="no-margin">Are you spending wisely?</h4>
+		<span class="mat-caption">Compare your spending with others and save more!</span>
+	</section>
+	<md-divider></md-divider>
+	<section style="margin: 10px .3rem;">
+		<a routerLink="/type-selection" md-button color="primary">
+			KNOW MORE
+		</a>
+		<button md-button (click)="toggleVisibility()">
+			NOT NOW
+		</button>
+	</section>
+</section>

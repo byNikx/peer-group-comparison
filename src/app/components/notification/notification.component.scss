@@ -1,0 +1,13 @@
+.bd-notification{
+	width: 50%;
+	background-color: red;
+	background-color: #fff;
+	position: fixed;
+	left: 50%;
+	margin-left: -25%;
+	z-index:1;
+
+	.app-title{
+		color: #FF5722
+	}
+}

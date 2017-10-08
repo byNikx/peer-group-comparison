@@ -1,0 +1,35 @@
+<bd-container>
+	<md-card>
+		<section fxLayout="row" fxLayoutAlign="space-between start">
+			<section>
+				<md-card-title>Peer Group Comparison</md-card-title>
+			</section>
+			<section>
+				<button md-icon-button>
+					<md-icon style="color: rgba(0,0,0,.57)">print</md-icon>
+				</button>
+			</section>
+		</section>
+		<md-card-content>
+			<bd-graph fxFlex type="google.charts.Line" [data]="line_ChartData" [options]="line_ChartOptions"></bd-graph>
+		</md-card-content>
+		<md-card-content>
+			<section fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">					
+				<md-icon>mood</md-icon>
+				<h2 class="no-margin">Your spending looks good!</h2>
+			</section>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</md-card-content>
+<!-- 			<img md-card-image src="./assets/img/bg-1.jpg" alt="">
+ -->		<md-card-actions>
+			<button md-button color="primary">PROMOTING ACTION</button>
+		</md-card-actions>
+	</md-card>
+</bd-container>

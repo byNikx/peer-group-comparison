@@ -43,26 +43,6 @@ export class LayoutService  implements OnDestroy{
   	getActiveBreakpoint(){
   		return this.activeBreakpoint;
   	}
-
-  	isXtraSmall(){
-  		return this.media.isActive('xs');
-  	}
-
-  	isSmall(){
-  		return this.media.isActive('sm');
-  	}
-
-  	isMedium(){
-  		return this.media.isActive('md');
-  	}
-
-  	isLarge(){
-  		return this.media.isActive('lg');
-  	}
-
-  	isXtraLarge(){
-  		return this.media.isActive('xl');
-  	}
 	
 	ngOnDestroy() {
 	    this.watcher.unsubscribe();
