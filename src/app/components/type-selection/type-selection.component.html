@@ -46,8 +46,8 @@
 
 		</md-card-content>
 		<md-card-actions>
+		    <a routerLink="/show-comparison" md-button color="primary" [disabled]="!!!selectedUserType">CONTINUE</a>
 		    <button md-button (click)="toggleNewUserTypes()">{{showNewTypes?'CANCEL':!!selectedUserType?'CHANGE':'SELECT'}}</button>
-		    <a routerLink="/show-comparison" md-button color="primary">CONTINUE</a>
 		</md-card-actions>
 	</md-card>
 </bd-container>

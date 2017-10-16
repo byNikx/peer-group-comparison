@@ -1,0 +1,50 @@
+<bd-container>
+	<md-card>
+		<section fxLayout="row" fxLayoutAlign="space-between start">
+			<section>
+				<md-card-title>Spending over time</md-card-title>
+			</section>
+			<section>
+				<button md-icon-button [mdMenuTriggerFor]="menu">
+					<md-icon style="color: rgba(0,0,0,.57)">more_vert</md-icon>
+				</button>
+				<md-menu #menu="mdMenu">
+				  <button md-menu-item>PRINT</button>
+				  <button md-menu-item>EXPORT</button>
+				</md-menu>
+			</section>
+		</section>
+		<br>
+		<md-card-content>
+			<section fxLayout="column" fxLayoutGap="20px">
+				<section fxLayout="row">
+					<md-select placeholder="Select Account" [(ngModel)]="selectedValue" name="account" fxFlex="33">
+						<md-option *ngFor="let account of accounts" [value]="account.getId()">
+							  {{account.getViewValue()}}
+						</md-option>
+					</md-select>
+				</section>
+				<section fxLayout="column">
+					<section fxLayout="row">
+						<button md-button fxFlex (click)="range=1; test1();" [color]="range==1?'accent':''">LAST 3 MONTHS</button>
+						<button md-button fxFlex (click)="range=2; test();" [color]="range==2?'accent':''">LAST 6 MONTHS</button>
+						<button md-button fxFlex (click)="range=3; test();" [color]="range==3?'accent':''">LAST 9 MONTHS</button>
+						<button md-button fxFlex (click)="range=4; test();"[color]="range==4?'accent':''">LAST 12 MONTHS</button>						
+<!-- 						<button md-button (click)="test()">Test</button>
+ -->					</section>
+					<md-slider fxFlex min="1" max="4" tickInterval="1" thumbLabel [(ngModel)]="range"></md-slider>
+				</section>
+				<section>
+				<br>
+					<h2 class="no-margin">Last {{range==1?'3':range==2?'6':range==3?'9':range==4?'12':''}} months spendings</h2>
+					<h4 class="no-margin">Average: DKK 209,229</h4>
+				</section>
+				<section>
+					<bd-graph style="margin-top:1.5rem;" fxFlex type="google.charts.Line" [data]="line_ChartData" [options]="line_ChartOptions"></bd-graph>
+				</section>
+			</section>
+			
+		</md-card-content>
+		<br>
+	</md-card>
+</bd-container>

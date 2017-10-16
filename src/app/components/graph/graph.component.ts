@@ -24,6 +24,7 @@ export class GraphComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
+   // alert('changeing...');
     if(!this.checkloaded()){
       google.charts.load('current', {'packages':chartPackages});
     }
@@ -45,6 +46,11 @@ export class GraphComponent implements OnInit, OnChanges {
              options:options||{}
             });
 	        wrapper.draw(element);
+        // var data = google.visualization.arrayToDataTable(dataTable);
+        // var chart = new google.visualization.LineChart(element);
+
+        // chart.draw(data, options);
+
 
     }
   }

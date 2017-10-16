@@ -6,8 +6,9 @@
 			<md-icon>filter_list</md-icon>
 		</button>
 	</section>
+
 	<md-accordion class="example-headers-align">
-	  <md-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true" *ngFor="let i of [1,2,3,4,5]">
+	  <md-expansion-panel hideToggle="true" *ngFor="let i of [1,2,3,4,5]">
 	    <md-expansion-panel-header>
 	      <md-panel-title>
 	        H&M, Aarhus
@@ -19,8 +20,104 @@
 	    </md-expansion-panel-header>
 		
 		<section fxLayout="column" fxLayoutGap="20px">
+			<section>
+				<form>
+					<md-select placeholder="Category" [(ngModel)]="selectedValue" name="food">
+						<md-option *ngFor="let category of categories" [value]="category.id">
+						  {{category.viewValue}}
+						</md-option>
+					</md-select>
+				</form>
+
+			</section>
 			<section>			
-			    Posting details here
+			    <md-grid-list [cols]="layout.media.isActive('gt-sm')?3:2" rowHeight="60px">
+					<md-grid-tile *ngFor="let i of [1,2,3,4,5,6,7]">
+						<section fxLayout="column" fxFlex>							
+							<span class="no-margin mat-caption">Label:</span>
+							<span class="mat-body-1">287,002 DKK</span>
+						</section>
+					</md-grid-tile>
+				</md-grid-list>
+				<section>
+					<section fxLayout="column" fxFlex>							
+						<span class="no-margin mat-caption">Comment:</span>
+						<span class="mat-body-1">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</span>
+					</section>
+				</section>
+			</section>
+
+			<bd-graph fxFlex type="google.charts.Bar" [data]="line_ChartData" [options]="line_ChartOptions"></bd-graph>
+				
+		</section>
+
+	    <md-action-row>
+			<button md-button color="primary">ACTION 1</button>
+	    	<button md-button color="primary">ACTION 2</button>
+	    </md-action-row>
+	  </md-expansion-panel>
+
+	</md-accordion>
+</bd-container>
+<bd-container>
+	<section fxLayout="row" fxLayoutAlign="space-between center" style="padding: 0 1.4rem;">
+		<h4 class="no-margin mat-caption">Yesterday</h4>
+		<button md-icon-button>
+			<md-icon>filter_list</md-icon>
+		</button>
+	</section>
+	<md-accordion class="example-headers-align">
+	  <md-expansion-panel hideToggle="true" *ngFor="let i of [1,2,3,4,5]">
+	    <md-expansion-panel-header>
+	      <md-panel-title>
+	        H&M, Aarhus
+	      </md-panel-title>
+	      <md-panel-description>
+	        Shopping
+	        <md-icon>redeem</md-icon>
+	      </md-panel-description>
+	    </md-expansion-panel-header>
+		
+		<section fxLayout="column" fxLayoutGap="20px">
+			<section>
+				<form>
+					<md-select placeholder="Category" [(ngModel)]="selectedValue" name="food">
+						<md-option *ngFor="let category of categories" [value]="category.id">
+						  {{category.viewValue}}
+						</md-option>
+					</md-select>
+				</form>
+
+			</section>
+			<section>			
+			    <md-grid-list [cols]="layout.media.isActive('gt-sm')?3:2" rowHeight="60px">
+					<md-grid-tile *ngFor="let i of [1,2,3,4,5,6,7]">
+						<section fxLayout="column" fxFlex>							
+							<span class="no-margin mat-caption">Label:</span>
+							<span class="mat-body-1">287,002 DKK</span>
+						</section>
+					</md-grid-tile>
+				</md-grid-list>
+				<section>
+					<section fxLayout="column" fxFlex>							
+						<span class="no-margin mat-caption">Comment:</span>
+						<span class="mat-body-1">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</span>
+					</section>
+				</section>
 			</section>
 
 			<bd-graph fxFlex type="google.charts.Bar" [data]="line_ChartData" [options]="line_ChartOptions"></bd-graph>

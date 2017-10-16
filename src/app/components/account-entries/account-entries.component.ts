@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user/user.service';
+import { LayoutService } from '../../services/layout/layout.service';
 
 @Component({
   selector: 'bd-account-entries',
@@ -9,7 +10,7 @@ import { UserService } from '../../services/user/user.service';
 export class AccountEntriesComponent implements OnInit {
 
 	
-	constructor(private user: UserService) { }
+	constructor(private user: UserService, private layout: LayoutService) { }
 
 	ngOnInit() {
 	}
@@ -40,5 +41,16 @@ export class AccountEntriesComponent implements OnInit {
 	        backgroundColor:'red'
 	        
 	};
+	categories = [
+		{id: 1, viewValue: 'Shopping'},
+		{id: 2, viewValue: 'Sports'},
+		{id: 3, viewValue: 'Rent'},
+		{id: 4, viewValue: 'Car'},
+		{id: 5, viewValue: 'School'},
+		{id: 6, viewValue: 'Insurance'},
+		{id: 7, viewValue: 'Travel'},
+		{id: 8, viewValue: 'Electricity'},
+		{id: 9, viewValue: 'Food'}
+	];
 
 }

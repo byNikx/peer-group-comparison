@@ -6,7 +6,8 @@ import {
 	MdDialogModule, MdCheckboxModule, MdRadioModule,
 	MdTabsModule, MdSelectModule, MdSliderModule,
 	MdTableModule, MatExpansionModule, MatSidenavModule,
-	MatGridListModule
+	MatGridListModule, MatFormFieldModule, MatSliderModule,
+	MatMenuModule
 } from '@angular/material';
 
 const MD_MODULES = [
@@ -15,7 +16,8 @@ const MD_MODULES = [
 	MdDialogModule, MdCheckboxModule, MdRadioModule,
 	MdTabsModule, MdSelectModule, MdSliderModule,
 	MdTableModule, MatTableModule, MatExpansionModule,
-	MatSidenavModule, MatGridListModule
+	MatSidenavModule, MatGridListModule, MatFormFieldModule,
+	MatSliderModule,MatMenuModule
 ]
 
 @NgModule({

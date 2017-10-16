@@ -21,6 +21,10 @@ export class AppComponent {
   		icon: 'list',
   		url: 'account-entries'
   	},{
+      label: 'Spending Over Time',
+      icon: 'show_chart',
+      url: 'spending-over-time'
+    },{
   		label: 'Budget',
   		icon: 'monetization_on',
   		url: 'budget'
