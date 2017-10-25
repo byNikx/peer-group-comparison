@@ -19,7 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "bd",
       "styles": [
-        "jyske-bank-theme.scss",
+        "sydbank-theme.scss",
         "styles.css"
       ],
       "scripts": [],

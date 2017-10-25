@@ -1,0 +1,66 @@
+@import '~@angular/material/theming';
+
+
+@include mat-core();
+
+$sydbank-palette: (
+  100: #017AC9,
+  500: #19426F,
+  600: #143559,
+  contrast: (
+    100: $black-87-opacity,
+    500: white,
+    600: white,
+  )
+);
+
+$primary: mat-palette($sydbank-palette, 500);
+$accent:  mat-palette($mat-red, A700);
+
+$warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat-light-theme($primary, $accent, $warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($app-theme);
+body{
+	padding: 0;
+	margin: 0;	
+}
+md-sidenav {
+  width: 250px;
+  background-color: #fff;
+}
+bd-container{
+	display: block;
+	&.xs{
+		margin:.5rem auto;
+		width: 95%
+	}
+	&.sm{
+		margin:1rem auto;
+		width: 85%
+	}
+	&.md{
+		margin:1rem auto;
+		width: 80%
+	}
+	&.lg{
+		margin:1rem auto;
+		width: 75%
+	}
+	&.xl{
+		margin:1rem auto;
+		width: 60%
+	}
+}
+
+.no-margin{
+	margin:0 !important;
+}
+.no-padding{
+	padding:0 !important;
+}
