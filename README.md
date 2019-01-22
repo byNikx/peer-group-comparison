@@ -1,5 +1,7 @@
 # PeerGroupComparison
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/byNikx/peer-group-comparison.svg)](https://greenkeeper.io/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.4.
 
 ## Development server
